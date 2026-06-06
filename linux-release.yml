@@ -1,0 +1,28 @@
+name: Linux Build Release
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-linux:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository code
+      uses: actions/checkout@v4
+
+    - name: Install Linux GUI Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential libwxgtk3.2-dev
+
+    - name: Compile the Project
+      run: |
+        g++ App.cpp mainFrame.cpp -o widget_linux_app `wx-config --cxxflags --libs`
+
+    - name: Upload the Finished Linux File
+      uses: actions/upload-artifact@v4
+      with:
+        name: linux-executable
+        path: widget_linux_app

@@ -1,0 +1,30 @@
+# ==========================================
+# Visual Studio Build and Artifact Outputs
+# ==========================================
+.vs/
+x64/
+Debug/
+Release/
+
+# ==========================================
+# Visual Studio Project Specific Files
+# ==========================================
+*.user
+*.aps
+*.suo
+*.pdb
+*.ilk
+*.lk
+
+# ==========================================
+# Compiled Objects and Executables
+# ==========================================
+*.obj
+*.o
+*.exe
+*.dll
+
+# ==========================================
+# GitHub Actions Output (Local ignores)
+# ==========================================
+widget_linux_app
